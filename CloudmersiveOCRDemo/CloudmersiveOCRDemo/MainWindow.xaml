@@ -8,7 +8,10 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Button Content="Run OCR" HorizontalAlignment="Left" Margin="452,45,0,0" VerticalAlignment="Top" Width="115" Click="Button_Click" Height="58"/>
-        <TextBox x:Name="txtResult" HorizontalAlignment="Left" Height="234" Margin="89,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="478" AcceptsReturn="True"/>
+        <TextBox x:Name="txtResult" HorizontalAlignment="Left" Height="234" Margin="89,137,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="478" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
+        <TextBox x:Name="txtInputFile" HorizontalAlignment="Left" Height="23" Margin="89,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246"/>
+        <Label x:Name="lblInput" Content="Input file:" HorizontalAlignment="Left" Margin="89,14,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnBrowse" Content="Browse..." HorizontalAlignment="Left" Margin="260,83,0,0" VerticalAlignment="Top" Width="75" Click="btnBrowse_Click"/>
 
     </Grid>
 </Window>

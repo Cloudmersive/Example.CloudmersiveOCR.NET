@@ -1,6 +1,7 @@
 ﻿using Cloudmersive.APIClient.NET.OCR.Api;
 using Cloudmersive.APIClient.NET.OCR.Client;
 using Cloudmersive.APIClient.NET.OCR.Model;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -47,6 +48,20 @@ namespace CloudmersiveOCRDemo
             catch
             {
                 Debug.Print("Exception when calling ImageOcrApi.ImageOcrPost: ");
+            }
+        }
+
+        private void btnBrowse_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fdlg = new OpenFileDialog();
+            fdlg.Title = "C# Corner Open File Dialog";
+            fdlg.InitialDirectory = @"c:\";
+            fdlg.Filter = "All files (*.*)|*.*|All files (*.*)|*.*";
+            fdlg.FilterIndex = 2;
+            fdlg.RestoreDirectory = true;
+            if (fdlg.ShowDialog().Value)
+            {
+                txtInputFile.Text = fdlg.FileName;
             }
         }
     }
