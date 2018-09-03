@@ -41,6 +41,8 @@ namespace CloudmersiveOCRDemo
                 // Converts an uploaded image in common formats such as JPEG, PNG into text via Optical Character Recognition.
                 response = apiInstance.ImageOcrPost(imageFile, "ara", "none");
                 Debug.Print(response.TextResult);
+
+                txtResult.Text = response.TextResult;
             }
             catch
             {
