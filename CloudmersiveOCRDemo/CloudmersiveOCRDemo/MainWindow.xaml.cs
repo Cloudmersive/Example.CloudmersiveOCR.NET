@@ -2,6 +2,7 @@
 using Cloudmersive.APIClient.NET.OCR.Client;
 using Cloudmersive.APIClient.NET.OCR.Model;
 using Microsoft.Win32;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -75,9 +76,8 @@ namespace CloudmersiveOCRDemo
             {
                 // Converts an uploaded image in common formats such as JPEG, PNG into text via Optical Character Recognition.
                 var response = apiInstance.ImageOcrImageLinesWithLocation(imageFile, txtLanguage.Text, "none");
-                Debug.Print(response.TextResult);
 
-                txtResult.Text = response.TextResult;
+                txtResult.Text = JsonConvert.SerializeObject(response);
             }
             catch
             {
