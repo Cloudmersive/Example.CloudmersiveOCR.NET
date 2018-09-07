@@ -64,5 +64,25 @@ namespace CloudmersiveOCRDemo
                 txtInputFile.Text = fdlg.FileName;
             }
         }
+
+        private void btnGetLines_Click(object sender, RoutedEventArgs e)
+        {
+            Configuration.Default.AddApiKey("Apikey", "c3543902-1862-498b-ba4a-256688c39435");
+            var apiInstance = new ImageOcrApi();
+            var imageFile = new System.IO.FileStream(@"C:\Temp\aratest.tif", System.IO.FileMode.Open); // System.IO.Stream | Image file to perform OCR on.  Common file formats such as PNG, JPEG are supported.
+
+            try
+            {
+                // Converts an uploaded image in common formats such as JPEG, PNG into text via Optical Character Recognition.
+                var response = apiInstance.ImageOcrImageLinesWithLocation(imageFile, txtLanguage.Text, "none");
+                Debug.Print(response.TextResult);
+
+                txtResult.Text = response.TextResult;
+            }
+            catch
+            {
+                Debug.Print("Exception when calling ImageOcrApi.ImageOcrPost: ");
+            }
+        }
     }
 }

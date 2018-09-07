@@ -14,6 +14,7 @@
         <Button x:Name="btnBrowse" Content="Browse..." HorizontalAlignment="Left" Margin="260,83,0,0" VerticalAlignment="Top" Width="75" Click="btnBrowse_Click"/>
         <TextBox x:Name="txtLanguage" HorizontalAlignment="Left" Height="23" Margin="89,139,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" Text="ENG"/>
         <Label x:Name="lblInput_Copy" Content="Language:" HorizontalAlignment="Left" Margin="89,108,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnGetLines" Content="Get Lines" HorizontalAlignment="Left" Margin="452,124,0,0" VerticalAlignment="Top" Width="115" Height="38" Click="btnGetLines_Click"/>
 
     </Grid>
 </Window>
